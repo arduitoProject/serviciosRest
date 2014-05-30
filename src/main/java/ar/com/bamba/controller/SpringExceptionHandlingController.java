@@ -15,9 +15,10 @@ import ar.com.bamba.exception.CustomGenericException;
 public class SpringExceptionHandlingController {
 
 	/***
-	 * 
-	 * @return
-	 * @throws IOException 
+	 * Evalua el texto ingresado y segun sea se lanza un CustomGenericException/RuntimeException/IOException
+	 * los cuales serán tratados por los @ExceptionHandler definidos. O en el caso del IOException es tratada
+	 * por un handler global (@ControllerAdvice)
+	 * @author ptamburro 
 	 */
 	@RequestMapping(value = "/obtenerException/{texto}")
 	public String getSpringException(@PathVariable("texto") String texto) throws IOException {
@@ -36,7 +37,9 @@ public class SpringExceptionHandlingController {
 	}
 
 	
-	
+	/**
+	 * Handler para CustomGenericException
+	 */
 	@ExceptionHandler(CustomGenericException.class)
 	public ModelAndView handleCustomException(CustomGenericException ex) {
 
@@ -47,6 +50,9 @@ public class SpringExceptionHandlingController {
 
 	}
 
+	/**
+	 * Handler para RuntimeException
+	 */
 	@ExceptionHandler(RuntimeException.class)
 	public ModelAndView handleAllException(RuntimeException ex) {
 

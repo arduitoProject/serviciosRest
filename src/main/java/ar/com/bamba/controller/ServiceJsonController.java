@@ -13,6 +13,10 @@ import ar.com.bamba.entidad.Sensor;
 @RequestMapping("/sensores")
 public class ServiceJsonController {
 		
+	
+	/**
+	 * Devuelve un JSON con un listado de sensores
+	 */
 	@RequestMapping(value="/json", produces = "application/json")
 	public List<Sensor> getSensorAsJson(){
 		
@@ -33,6 +37,9 @@ public class ServiceJsonController {
 	}
 	
 	
+	/**
+	 * Devuelve un xml con los datos de un sensor
+	 */
 	@RequestMapping(value = "/xml", produces = "application/xml")
 	public Sensor getSensorAsXml() {
 		

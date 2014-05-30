@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class GlobalHandlerExceptionController {
 
 	/**
-	 * Este metodo es un handler global a la IOException
+	 * Este metodo es un handler global a la IOException, si ocurre una IOException se llama a error_global.jsp
 	 * @author ptamburro
 	 */
 	@ExceptionHandler(IOException.class)
