@@ -1,0 +1,47 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
+	
+	<!-- Dispatcher Servlet Class	-->
+	<servlet>
+		 <servlet-name>rest</servlet-name>
+		 <servlet-class>
+		  	org.springframework.web.servlet.DispatcherServlet
+		 </servlet-class>
+		 <load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	
+	<!-- Mapping para encontrar definicion de servlets -->
+	<servlet-mapping>
+		 <servlet-name>rest</servlet-name>
+		 <url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+
+	<!--  defino ubicacion de archivo de conf de el servlet -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/rest-servlet.xml</param-value>
+	</context-param>
+	
+
+	<!-- listener para cuando arranque o pare la app -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	
+	<!-- Manejo de jsp idex y para los 404-->
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/jsp/error/error_404.jsp</location>
+	</error-page>
+
+
+
+</web-app>
+
