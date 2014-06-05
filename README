@@ -19,7 +19,7 @@
 > http://localhost:8087/servicios/errores/obtenerException/custom	(single handler de CustomGenericException)
 > http://localhost:8087/servicios/errores/obtenerException/global   (global handler de IoException)
 
-3) Service Rest con JSON
+3) Service Rest con response JSON/XML
 
 	 http://localhost:8080/servicios/sensores/xml
 	 http://localhost:8080/servicios/sensores/json 
